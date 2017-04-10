@@ -1,0 +1,68 @@
+function getUserChoice () {
+  var userInput = prompt('Rock, Paper or Scissors?');
+  userInput = userInput.toLowerCase();
+ if (userInput === "rock") {
+    return userInput
+  } else if (userInput === "scissors") {
+    return userInput; 
+  } else if (userInput === "paper") {
+    return userInput
+     } else if (userInput === "bomb") {
+    return userInput
+  } else {
+   console.log('Error');
+  }
+}
+
+function getComputerChoice() {
+  var output = Math.floor(Math.random()*3);
+  switch (output) {
+    case 0:     
+   return 'rock'
+      break
+      case 1:
+      return 'scissors'
+      break
+      case 2:
+      return 'paper'
+      break
+                }
+}
+
+function determineWinner(userChoice, computerChoice){
+  if(userChoice === computerChoice){
+    return 'Tie'
+  } else if (userChoice === 'bomb') {
+     return 'User Wins'
+  } else if (userChoice === 'rock') {
+    if (computerChoice === 'scissors') {
+     return 'User Wins'
+    } else {
+        return 'Computer Wins'
+        }
+  } else if (userChoice === 'paper') {
+    if (computerChoice === 'scissors') {
+     return 'Computer Wins'
+    } else {
+        return 'User Wins'
+        } 
+  } else if (userChoice === 'scissors') {
+    if (computerChoice === 'paper') {
+     return 'User Wins'
+    } else {
+        return 'Computer Wins'
+        }
+}
+}
+
+
+  function playGame(){
+		var userChoice = getUserChoice()
+    var computerChoice = getComputerChoice()
+    console.log(userChoice)
+    console.log(computerChoice)
+   console.log (determineWinner(userChoice, computerChoice))
+    }
+
+
+console.log(playGame())
