@@ -1,0 +1,15 @@
+function averages(numbers) {
+  var finalList = []
+  if (numbers == undefined){
+  return finalList
+  } 
+  if (numbers.length == 1){
+  return finalList
+  } 
+  else {
+    for (var i = 0; i < (numbers.length - 1); i++){
+      finalList.push((numbers[i] + numbers[i+1])/2)
+    }
+  return finalList
+  }
+}
